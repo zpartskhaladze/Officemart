@@ -1,18 +1,21 @@
 package PageObject;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 
 public class CartElements {
     public SelenideElement
             addCart = $(byClassName("add_cart")),
             cartToast = $(byClassName("toast")),
             cartPage = $(byClassName("cart_info")),
-            cartPlus=  $("i.fa.fa-plus"),
-            cartMinus=  $("i.fa.fa-minus");
+            cartPlus = $("i.fa.fa-plus"),
+            cartMinus = $("i.fa.fa-minus"),
+            cartDelete = $("i.fas.fa-times"),
+            cartNotEmpty = $("div.item_row.cartItem"),
+            clearCart = $$(".remove_carts").get(1),
+            emptyCartHint = $(byText("კალათა ცარიელია")),
+            cartContinue = $(byClassName("continue"));
 
 }

@@ -4,13 +4,17 @@ import PageObject.CartElements;
 import Utils.ScreenshotUtils;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 
 import java.util.Objects;
 
 import static com.codeborne.selenide.Selenide.sleep;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import static org.testng.AssertJUnit.assertFalse;
 
 public class CartSteps extends CartElements {
 
@@ -92,7 +96,64 @@ public class CartSteps extends CartElements {
 
         return this;
     }
+
+    @Step("Delete item from the cart")
+    public CartSteps deleteFromCart() {
+        cartDelete.click();
+        ScreenshotUtils.takeScreenshot("Delete item from the cart");
+        sleep(2000);
+        return this;
+
+    }
+
+    @Step("Check cart is empty")
+    public CartSteps checkCartEmpty() {
+        assertTrue(cartNotEmpty.is(Condition.not(Condition.visible)));
+        return this;
+    }
+
+    @Step("Check cart isn`t empty")
+    public CartSteps checkCartNotEmpty() {
+        assertTrue(cartNotEmpty.is(Condition.visible));
+        return this;
+    }
+
+    @Step("Clear cart")
+    public CartSteps clearCart() {
+        // Get the WebDriver instance from Selenide
+        WebDriver driver = WebDriverRunner.getWebDriver();
+
+        // Scroll into view using JavaScriptExecutor
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollBy(40,3000);");
+
+        // Click the clearCart button
+        clearCart.click();
+        ScreenshotUtils.takeScreenshot("Remove all items from the cart");
+        return this;
+    }
+
+    @Step("Assert empty cart hint")
+    public CartSteps emptyCartHint() {
+        assertTrue(emptyCartHint.is(Condition.visible));
+
+        return this;
+    }
+
+    @Step("Check Continue button")
+    public CartSteps continueCart() {
+        assertFalse(cartContinue.is(Condition.visible));
+        return this;
+    }
+
+    @Step("Check Clear Cart Button")
+    public CartSteps checkClearCart() {
+        assertFalse(clearCart.is(Condition.visible));
+        return this;
+    }
 }
+
+
 
 
 

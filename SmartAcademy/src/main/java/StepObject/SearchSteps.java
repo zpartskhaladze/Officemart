@@ -43,7 +43,7 @@ public class SearchSteps extends SearchElements {
     }
 
     @Step("Assert that invalid search has correct message")
-    public SearchSteps invalidSearch(String item2) {
+    public SearchSteps invalidSearch() {
         assertTrue(invalidSearch.is(Condition.visible)); // Hard assert
         ScreenshotUtils.takeScreenshot("Invalid search message");
         return this;

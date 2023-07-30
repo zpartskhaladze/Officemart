@@ -43,4 +43,6 @@ public class ProductSteps extends ProductElements {
     public ProductSteps getTotalPrice() {
         productTotalPrice.getText();
         System.out.println(productTotalPrice.getText());
-        return this;}}
+        return this;}
+}
+
