@@ -50,7 +50,7 @@ public class CartTest extends ChromeRunner {
                 .checkCartNotEmpty()
                 .clearCart()
                 .checkCartEmpty()
-                .continueCart()
+                .checkContinueCart()
                 .checkClearCart();
 
 

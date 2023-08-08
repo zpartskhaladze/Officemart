@@ -141,8 +141,14 @@ public class CartSteps extends CartElements {
     }
 
     @Step("Check Continue button")
-    public CartSteps continueCart() {
+    public CartSteps checkContinueCart() {
         assertFalse(cartContinue.is(Condition.visible));
+        return this;
+    }
+
+    @Step("Click Continue")
+    public CartSteps clickContinueCart() {
+        cartContinue.click();
         return this;
     }
 
