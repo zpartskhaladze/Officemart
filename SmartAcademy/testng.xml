@@ -1,0 +1,177 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Officemart" verbose="1" thread-count="3" parallel="tests">
+
+    <!-- Tests for Cart-->
+    <test name=" Delete Multiple Product from Cart" parallel="tests">  <!-- Test Case N#14, N#15, N#16 -->
+        <classes>
+            <class name="CartTests.DeleteMultipleProductTest"/>
+        </classes>
+    </test>
+
+    <test name="Delete Single Product from Cart" parallel="tests">   <!-- Test Case N#13 -->
+        <classes>
+            <class name="CartTests.DeleteSingleProductTest"/>
+        </classes>
+    </test>
+
+    <test name="Product Price Decrease" parallel="tests">  <!-- Test Case N#12 -->
+        <classes>
+            <class name="CartTests.PriceDecreaseTest"/>
+        </classes>
+    </test>
+
+    <test name="Product Price Increase" parallel="tests"> <!-- Test Case N#11 -->
+        <classes>
+            <class name="CartTests.PriceIncreaseTest"/>
+        </classes>
+    </test>
+
+
+    <test name="Check product specification" parallel="tests">    <!-- Test Case N#5. N#6, N#7, N#8, N#9, N#10 -->
+        <classes>
+            <class name="CartTests.ProductSpecificationsTest">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Toast message that product is added to the cart" parallel="tests">  <!-- Test Case N#4 -->
+        <classes>
+            <class name="CartTests.ToastMessageTest">
+            </class>
+        </classes>
+    </test>
+
+
+    <!-- Tests for Legal and Individual Forms--> <!-- Test case N#36-->
+    <test name="Address Field Borders" parallel="tests">  <!-- Test case N#30 -->
+        <classes>
+            <class name="FormsSectionTests.AddressBordersTest">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Date Field Borders" parallel="tests">   <!-- Test case N#36-->
+        <classes>
+            <class name="FormsSectionTests.DateBordersTest"/>
+        </classes>
+    </test>
+
+    <test name="Email Field Borders" parallel="tests"> <!-- Test case N#37 -->
+        <classes>
+            <class name="FormsSectionTests.EmailBordersTest"/>
+        </classes>
+    </test>
+
+    <test name="Negative Email input #1" parallel="tests"> <!-- Test case N#38 -->
+        <classes>
+            <class name="FormsSectionTests.FirstNegativeEmailTest"/>
+        </classes>
+    </test>
+
+    <test name="Identifier Code Field Borders" parallel="tests"> <!-- Test case N#29 -->
+        <classes>
+            <class name="FormsSectionTests.IdentifierBordersTest"/>
+        </classes>
+    </test>
+
+    <test name="Identifier Field Input" parallel="tests"> <!-- Test case N#26 -->
+        <classes>
+            <class name="FormsSectionTests.IdentifierInputTest"/>
+        </classes>
+    </test>
+
+    <test name="Long Identifier Input" parallel="tests"> <!-- Test case N#28 -->
+        <classes>
+            <class name="FormsSectionTests.LongIdentifierTest"/>
+        </classes>
+    </test>
+
+    <test name="Long Phone Number Input" parallel="tests"> <!-- Test case N#33 -->
+        <classes>
+            <class name="FormsSectionTests.LongPhoneNumberTest"/>
+        </classes>
+    </test>
+
+    <test name="Phone Number Field Borders" parallel="tests"> <!-- Test case N#34 -->
+        <classes>
+            <class name="FormsSectionTests.PhoneNumberBordersTest"/>
+        </classes>
+    </test>
+
+    <test name="Invalid Phone Number Input" parallel="tests"> <!-- Test case N#31 -->
+        <classes>
+            <class name="FormsSectionTests.PhoneNumberNegativeTest"/>
+        </classes>
+    </test>
+
+    <test name="Borders Become Red" parallel="tests"> <!-- Test case N#19, N#20, N#21, N21, N#22, N#23, N#24 -->
+        <classes>
+            <class name="FormsSectionTests.RedBordersTest"/>
+        </classes>
+    </test>
+
+    <test name="Borders Become Default" parallel="tests"> <!-- Test case N#25 -->
+        <classes>
+            <class name="FormsSectionTests.RegularBordersTest"/>
+        </classes>
+    </test>
+
+    <test name="Negative Email Input #2" parallel="tests"> <!-- Test case N#39 -->
+        <classes>
+            <class name="FormsSectionTests.SecondNegativeEmailTest"/>
+        </classes>
+    </test>
+
+    <test name="Date Field Short Input" parallel="tests"> <!-- Test case N#35 -->
+        <classes>
+            <class name="FormsSectionTests.ShortDateTest"/>
+        </classes>
+    </test>
+
+    <test name="Identifier Code Field Short Input" parallel="tests"> <!-- Test case N#27 -->
+        <classes>
+            <class name="FormsSectionTests.ShortIdentifierTest"/>
+        </classes>
+    </test>
+
+    <test name="Phone Number Field Short Input" parallel="tests"> <!-- Test case N#32 -->
+        <classes>
+            <class name="FormsSectionTests.ShortPhoneNumberTest"/>
+        </classes>
+    </test>
+
+    <test name="Negative Email Input #3" parallel="tests"> <!-- Test case N#40 -->
+        <classes>
+            <class name="FormsSectionTests.ThirdNegativeEmailTest"/>
+        </classes>
+    </test>
+
+
+    <test name="Legal and Individual forms visibility" parallel="tests"> <!-- Test case N#18 -->
+        <classes>
+            <class name="FormsSectionTests.VisibleFormsTest"/>
+        </classes>
+    </test>
+
+    <!-- Tests for Search Functionality--> <!-- Test case N#3-->
+    <test name="Non-existent product search" parallel="tests">
+        <classes>
+            <class name="SearchTests.NegativeProductSearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Correct product search" parallel="tests"> <!-- Test case N#2 -->
+        <classes>
+            <class name="SearchTests.PositiveProductSearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Visibility of the search field" parallel="tests"> <!-- Test case N#1 -->
+        <classes>
+            <class name="SearchTests.VisibleSearchFieldTest"/>
+        </classes>
+    </test>
+
+
+</suite>

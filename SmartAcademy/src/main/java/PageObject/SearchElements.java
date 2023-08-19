@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class SearchElements {
     public SelenideElement
             searchBtnMinimized = $(byClassName("search")),
-            searchField = $(byClassName("modal-content")),
+            searchField = $(byClassName("form_group")),
             searchInput = $(byName("search")),
             searchBtnExpanded = $(byClassName("search_button")),
             searchResult1 = $(".prod_title h4"),

@@ -1,14 +1,13 @@
 package Utils;
 
-import static com.codeborne.selenide.Selenide.open;
-
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterMethod;
+
+import static com.codeborne.selenide.Selenide.open;
 
 public class ChromeRunner {
     private static final int WINDOW_WIDTH = 1280;
@@ -36,15 +35,13 @@ public class ChromeRunner {
 
         open("https://officemart.ge/ge");
 
+        // Execute the JavaScript to remove the overlay
+        String jsCode = "const welcomeOverlay = document.querySelector('.welcome-modal-overlay');" +
+                "welcomeOverlay.click();";
+        Selenide.executeJavaScript(jsCode);
+
         SelenideLogger.addListener("allure", new AllureSelenide().screenshots(true)
                 .savePageSource(false));
     }
 
-    @AfterMethod(description = "Clear cache and cookies")
-    public static void tearDown() {
-        Selenide.clearBrowserCookies();
-        Selenide.clearBrowserLocalStorage();
-        Selenide.closeWindow();
-        Selenide.closeWebDriver();
-    }
 }

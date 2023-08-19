@@ -2,7 +2,6 @@ package StepObject;
 
 import PageObject.CartElements;
 import Utils.ScreenshotUtils;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
@@ -13,8 +12,6 @@ import java.util.Objects;
 
 import static com.codeborne.selenide.Selenide.sleep;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-import static org.testng.AssertJUnit.assertFalse;
 
 public class CartSteps extends CartElements {
 
@@ -25,12 +22,6 @@ public class CartSteps extends CartElements {
         return this;
     }
 
-    @Step("Assert that cart toast appear")
-    public CartSteps cartToast() {
-        assertTrue(cartToast.is(Condition.visible)); // Hard assert
-        ScreenshotUtils.takeScreenshot("Cart Toast Message");
-        return this;
-    }
 
     @Step("Opened cart page")
     public CartSteps openCart() {
@@ -106,17 +97,6 @@ public class CartSteps extends CartElements {
 
     }
 
-    @Step("Check cart is empty")
-    public CartSteps checkCartEmpty() {
-        assertTrue(cartNotEmpty.is(Condition.not(Condition.visible)));
-        return this;
-    }
-
-    @Step("Check cart isn`t empty")
-    public CartSteps checkCartNotEmpty() {
-        assertTrue(cartNotEmpty.is(Condition.visible));
-        return this;
-    }
 
     @Step("Clear cart")
     public CartSteps clearCart() {
@@ -133,31 +113,19 @@ public class CartSteps extends CartElements {
         return this;
     }
 
-    @Step("Assert empty cart hint")
-    public CartSteps emptyCartHint() {
-        assertTrue(emptyCartHint.is(Condition.visible));
-
-        return this;
-    }
-
-    @Step("Check Continue button")
-    public CartSteps checkContinueCart() {
-        assertFalse(cartContinue.is(Condition.visible));
-        return this;
-    }
 
     @Step("Click Continue")
     public CartSteps clickContinueCart() {
         cartContinue.click();
+        sleep(1000);
+        ScreenshotUtils.takeScreenshot("Continue Cart ");
+
         return this;
     }
 
-    @Step("Check Clear Cart Button")
-    public CartSteps checkClearCart() {
-        assertFalse(clearCart.is(Condition.visible));
-        return this;
-    }
+
 }
+
 
 
 

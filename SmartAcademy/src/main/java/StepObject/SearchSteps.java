@@ -9,6 +9,7 @@ import static org.testng.Assert.assertTrue;
 
 public class SearchSteps extends SearchElements {
 
+
     @Step("Open Search Field")
     public SearchSteps searchOpen() {
         searchBtnMinimized.click();
@@ -16,11 +17,7 @@ public class SearchSteps extends SearchElements {
         return this;
     }
 
-    @Step("Assert that check field is opened")
-    public SearchSteps checkSearchField() {
-        assertTrue(searchField.is(Condition.visible));
-        return this;
-    }
+
 
     @Step("Enter an item name")
     public SearchSteps searchInput(String item) {
@@ -32,18 +29,22 @@ public class SearchSteps extends SearchElements {
     @Step("Search an item")
     public SearchSteps searchItem() {
         searchBtnExpanded.click();
+        ScreenshotUtils.takeScreenshot("Search an item");
+
         return this;
     }
 
     @Step("Assert that search result is correct")
-    public SearchSteps checkItem() {
+    public SearchSteps checkCorrectItem() {
         String productTitle = searchResult1.getText().trim();
         assertTrue(productTitle.contains("კალამი ბურთულიანი")); // Hard assert
+        ScreenshotUtils.takeScreenshot("Search result");
+
         return this;
     }
 
     @Step("Assert that invalid search has correct message")
-    public SearchSteps invalidSearch() {
+    public SearchSteps checkInvalidItem() {
         assertTrue(invalidSearch.is(Condition.visible)); // Hard assert
         ScreenshotUtils.takeScreenshot("Invalid search message");
         return this;

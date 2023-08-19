@@ -1,7 +1,6 @@
 package PageObject;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -12,7 +11,7 @@ public class FormSectionElements {
             individualTab = $(byCssSelector("li.tab > a#iur")),
             legalTabSend = $(byId("btn2")),
             nameField = $(byName("name")),
-            identificationField = $(byName("personalId")),
+            identifierField = $(byName("personalId")),
             addressField = $(byName("address")),
             phoneField = $(byName("phone")),
             dateField = $(byName("date")),
