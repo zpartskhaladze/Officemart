@@ -16,6 +16,7 @@ Follow these steps to set up and use the Officemart Test Automation project.
 - Install Java Development Kit (JDK).
 - Install Maven.
 
+
 **Installation**
 1. Clone the repository:
 `git clone https://github.com/zpartskhaladze/Officemart.git`
@@ -23,6 +24,7 @@ Follow these steps to set up and use the Officemart Test Automation project.
 `cd Officemart`
 3. Install project dependencies using Maven:
 `mvn install`
+
 
 **Usage**
 
@@ -32,22 +34,34 @@ After installing the project and dependencies, use provided configurations to ru
 2. Customize test suites and parameters.
 3. Run test suites using IDEs, command-line tools, or build systems.
 
+
 **Configuration**
+
 Modify project settings in testng.xml. Adjust suite names, parallel threads, and other parameters.
 
+
 **Tests**
+
 Run tests by executing test suites in testng.xml. This automates officemart.ge website testing.
 
+
 **Allure Reports**
+
 This project integrates Allure Reports for enhanced test reporting. After running tests, you can generate interactive HTML reports using Allure. To view reports, run the following command:
 `allure serve allure-results`
 
+
 **Contributing**
+
 Contribute via pull requests or issues in the GitHub repository https://github.com/zpartskhaladze/Officemart.git
 
+
 **License**
+
 This project is licensed under the MIT License. Use, modify, and distribute per license terms.
 
 
+
 **Acknowledgements**
+
 Thanks to SmartAcademy for this project opportunity. Appreciation to officemart.ge for collaboration on test automation.
