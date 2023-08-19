@@ -22,7 +22,7 @@ Follow these steps to set up and use the Officemart Test Automation project.
 2. Navigate to the project directory:
 `cd Officemart`
 3. Install project dependencies using Maven:
-mvn install
+`mvn install`
 
 **Usage**
 After installing the project and dependencies, use provided configurations to run test suites.
