@@ -25,6 +25,7 @@ Follow these steps to set up and use the Officemart Test Automation project.
 `mvn install`
 
 **Usage**
+
 After installing the project and dependencies, use provided configurations to run test suites.
 
 1. Open the testng.xml file in the project root.
